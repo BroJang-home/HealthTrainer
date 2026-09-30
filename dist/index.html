@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="중학생 국악 타악 연주자를 위한 주 3회 상체 근력 운동 플랜">
+  <meta name="theme-color" content="#12243a">
+  <title>장구 상체 근력 플랜</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2312243a'/%3E%3Cpath d='M15 22c10 5 24 5 34 0v20c-10-5-24-5-34 0z' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M15 22c-5 1-5 19 0 20M49 22c5 1 5 19 0 20' fill='none' stroke='%23f5a623' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M22 15l20 34' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #12243a;
+      --ink-soft: #3e5268;
+      --accent: #e4772e;
+      --accent-soft: #fff0e5;
+      --blue-soft: #edf4fa;
+      --line: #d7e0e8;
+      --paper: #ffffff;
+      --canvas: #f3f6f8;
+      --safe: #28785d;
+      --danger: #a33d3d;
+      --shadow: 0 18px 50px rgba(18, 36, 58, .10);
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--canvas); color: var(--ink); font-size: 16px; line-height: 1.58; }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .site-header { background: var(--ink); color: white; }
+    .header-inner { max-width: 1180px; margin: 0 auto; padding: 28px 22px 24px; }
+    .eyebrow { margin: 0 0 6px; color: #f7b982; font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -.035em; }
+    .subtitle { max-width: 700px; margin: 10px 0 0; color: #dce6ef; font-size: 1rem; }
+    .quick-strip { max-width: 1180px; margin: 0 auto; padding: 0 22px 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .quick-strip span { padding: 7px 11px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; color: #edf4fa; font-size: .88rem; }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px 22px 56px; }
+    .notice { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; padding: 14px 16px; border: 1px solid #f2c9a8; border-radius: 14px; background: var(--accent-soft); color: #63391e; }
+    .notice strong { white-space: nowrap; }
+    .section-title { margin: 0 0 12px; font-size: 1.25rem; letter-spacing: -.02em; }
+    .workbench { display: grid; grid-template-columns: minmax(0, .95fr) minmax(380px, 1.35fr); gap: 22px; align-items: start; }
+    .panel { border: 1px solid var(--line); border-radius: 20px; background: var(--paper); box-shadow: var(--shadow); overflow: hidden; }
+    .plan-panel { padding: 18px; }
+    .session-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+    .tab { min-height: 48px; padding: 9px 8px; border: 1px solid var(--line); border-radius: 12px; background: white; cursor: pointer; font-weight: 750; }
+    .tab[aria-selected="true"] { border-color: var(--ink); background: var(--ink); color: white; }
+    .session-meta { display: flex; justify-content: space-between; gap: 12px; margin: 4px 2px 14px; color: var(--ink-soft); font-size: .9rem; }
+    .exercise-list { display: grid; gap: 9px; }
+    .exercise-btn { width: 100%; display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 11px; padding: 13px; border: 1px solid var(--line); border-radius: 14px; background: white; text-align: left; cursor: pointer; transition: transform .16s ease, border-color .16s ease, background .16s ease; }
+    .exercise-btn:hover { transform: translateY(-1px); border-color: #99aabc; }
+    .exercise-btn[aria-current="true"] { border-color: var(--accent); background: #fff9f5; }
+    .num { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--blue-soft); font-weight: 850; }
+    .exercise-btn[aria-current="true"] .num { background: var(--accent); color: white; }
+    .exercise-name { display: block; font-weight: 800; }
+    .exercise-role { display: block; margin-top: 1px; color: var(--ink-soft); font-size: .84rem; }
+    .dose { color: var(--ink-soft); font-size: .84rem; white-space: nowrap; }
+    .round-guide { margin-top: 14px; padding: 13px; border-radius: 13px; background: var(--blue-soft); color: var(--ink-soft); font-size: .9rem; }
+    .detail-panel { position: sticky; top: 16px; }
+    .detail-image-wrap { display: grid; place-items: center; min-height: 280px; padding: 12px; background: #fff; border-bottom: 1px solid var(--line); }
+    .detail-image { width: 100%; max-height: 430px; object-fit: contain; border-radius: 12px; }
+    .detail-body { padding: 22px; }
+    .detail-topline { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .detail-kicker { margin: 0 0 4px; color: var(--accent); font-size: .82rem; font-weight: 850; letter-spacing: .08em; }
+    h2 { margin: 0; font-size: clamp(1.45rem, 4vw, 2rem); letter-spacing: -.025em; }
+    .detail-purpose { margin: 7px 0 0; color: var(--ink-soft); }
+    .set-chip { flex: 0 0 auto; padding: 8px 11px; border-radius: 12px; background: var(--ink); color: white; font-weight: 800; font-size: .9rem; }
+    .tempo-card { margin: 18px 0; padding: 14px 16px; border-left: 5px solid var(--accent); border-radius: 0 12px 12px 0; background: var(--accent-soft); }
+    .tempo-card span { display: block; color: #7a4727; font-size: .82rem; font-weight: 800; }
+    .tempo-card strong { display: block; margin-top: 2px; font-size: 1.03rem; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 18px; }
+    .step { padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: #fbfcfd; }
+    .step b { display: block; margin-bottom: 4px; color: var(--accent); font-size: .9rem; }
+    .step p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
+    .coach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .check-card { padding: 15px; border-radius: 14px; background: var(--blue-soft); }
+    .check-card.danger { background: #fff0f0; }
+    .check-card h3 { margin: 0 0 7px; font-size: 1rem; }
+    .check-card ul { margin: 0; padding-left: 19px; color: var(--ink-soft); }
+    .coach-say { margin-top: 14px; padding: 13px 15px; border: 1px dashed #9eb0c1; border-radius: 13px; color: var(--ink-soft); }
+    .coach-say strong { color: var(--ink); }
+    .month-plan { margin-top: 26px; }
+    .progress-table { width: 100%; border-collapse: collapse; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: var(--shadow); }
+    .progress-table th, .progress-table td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .progress-table tr:last-child td { border-bottom: 0; }
+    .progress-table th { background: var(--ink); color: white; font-size: .9rem; }
+    .progress-table td:first-child { width: 92px; font-weight: 800; }
+    .safety { margin-top: 22px; padding: 18px; border-radius: 16px; background: #eaf6f1; color: #205947; }
+    .safety h2 { font-size: 1.15rem; }
+    .safety p { margin: 7px 0 0; }
+    .sources { margin-top: 22px; color: var(--ink-soft); font-size: .88rem; }
+    .sources a { color: var(--ink); }
+    footer { max-width: 1180px; margin: 0 auto; padding: 0 22px 32px; color: #66798b; font-size: .82rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    :focus-visible { outline: 3px solid #f5a15f; outline-offset: 3px; }
+    @media (max-width: 840px) {
+      .workbench { grid-template-columns: 1fr; }
+      .detail-panel { position: static; scroll-margin-top: 12px; }
+      .detail-image-wrap { min-height: 210px; }
+      .steps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .header-inner { padding: 22px 16px 18px; }
+      .quick-strip { padding: 0 16px 17px; }
+      main { padding: 16px 12px 42px; }
+      .notice { display: block; }
+      .plan-panel, .detail-body { padding: 15px; }
+      .exercise-btn { grid-template-columns: 32px 1fr; }
+      .dose { grid-column: 2; }
+      .detail-topline { display: block; }
+      .set-chip { display: inline-block; margin-top: 10px; }
+      .coach-grid { grid-template-columns: 1fr; }
+      .progress-table { display: block; overflow-x: auto; }
+      .progress-table th, .progress-table td { min-width: 110px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">3 days · upper body · percussion</p>
+      <h1>장구 상체 근력 플랜</h1>
+      <p class="subtitle">첫 4~8주는 핵심 동작을 반복해 어깨·견갑·전완·몸통의 기초를 만듭니다. 계획표에서 운동을 누르면 자세와 보호자 체크 포인트가 열립니다.</p>
+    </div>
+    <div class="quick-strip" aria-label="운동 기본 원칙">
+      <span>주 3회 · 비연속일</span><span>한 종목 3세트</span><span>실패지점까지 하지 않기</span><span>통증 시 즉시 중단</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="notice"><strong>시작 전</strong><span>5분간 어깨·손목을 가볍게 돌리고 벽 슬라이드 8~10회를 합니다. 준비 움직임은 본운동 세트에 포함하지 않습니다.</span></div>
+
+    <section aria-labelledby="weekly-title">
+      <h2 class="section-title" id="weekly-title">주간 계획표</h2>
+      <div class="workbench">
+        <div class="panel plan-panel">
+          <div class="session-tabs" role="tablist" aria-label="운동 회차 선택">
+            <button class="tab" role="tab" aria-selected="true" data-session="day1">1회차</button>
+            <button class="tab" role="tab" aria-selected="false" data-session="day2">2회차</button>
+            <button class="tab" role="tab" aria-selected="false" data-session="day3">3회차</button>
+          </div>
+          <div class="session-meta"><span id="session-focus">기본 상체＋전완</span><span>약 35분</span></div>
+          <div class="exercise-list" id="exercise-list" aria-live="polite"></div>
+          <div class="round-guide"><strong>진행:</strong> 1~5번을 각각 1세트씩 수행한 뒤 90초 쉽니다. 이 순서를 총 3라운드 반복합니다.</div>
+        </div>
+
+        <article class="panel detail-panel" id="exercise-detail" tabindex="-1" aria-live="polite">
+          <div class="detail-image-wrap"><img class="detail-image" id="detail-image" src="assets/band-row.png" alt="밴드 로우 단계별 자세"></div>
+          <div class="detail-body">
+            <div class="detail-topline">
+              <div><p class="detail-kicker" id="detail-role">등 · 견갑 안정</p><h2 id="detail-name">밴드 로우</h2><p class="detail-purpose" id="detail-purpose"></p></div>
+              <div class="set-chip" id="detail-dose"></div>
+            </div>
+            <div class="tempo-card"><span>운동 속도</span><strong id="detail-tempo"></strong></div>
+            <div class="steps" id="detail-steps"></div>
+            <div class="coach-grid">
+              <div class="check-card"><h3>옆에서 확인</h3><ul id="detail-checks"></ul></div>
+              <div class="check-card danger"><h3>바로 멈추기</h3><ul id="detail-stop"></ul></div>
+            </div>
+            <div class="coach-say"><strong>한마디 코칭:</strong> <span id="detail-coach"></span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="month-plan" aria-labelledby="month-title">
+      <h2 class="section-title" id="month-title">첫 4주 진행표</h2>
+      <table class="progress-table">
+        <thead><tr><th>주차</th><th>세트</th><th>목표</th><th>올리지 않는 것</th></tr></thead>
+        <tbody>
+          <tr><td>1주차</td><td>모든 운동 3세트</td><td>반복 범위의 아래쪽, 자세 익히기</td><td>밴드 강도·무게</td></tr>
+          <tr><td>2주차</td><td>모든 운동 3세트</td><td>같은 저항으로 반복 범위의 위쪽 도전</td><td>세트와 저항 동시 증가</td></tr>
+          <tr><td>3주차</td><td>밴드 로우만 4세트</td><td>두 번 연속 정확히 끝냈을 때만 추가</td><td>푸시업 높이 낮추기</td></tr>
+          <tr><td>4주차</td><td>로우·푸시업 4세트, 나머지 3세트</td><td>다음 날 연주에 피로가 남지 않게</td><td>한 운동 4세트 초과</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="safety" aria-labelledby="safety-title">
+      <h2 id="safety-title">안전 기준</h2>
+      <p>근육이 힘든 느낌은 괜찮지만 날카로운 통증, 관절 끼임, 저림, 악력 저하, 어지럼이 있으면 중단합니다. 기존 통증이나 부상이 있다면 이 계획보다 먼저 의료·재활 전문가의 평가를 받으세요.</p>
+    </section>
+
+    <p class="sources">근거 참고: <a href="https://www.healthychildren.org/English/healthy-living/sports/Pages/Strength-Training.aspx" target="_blank" rel="noreferrer">미국소아과학회 청소년 근력운동 안내</a> · <a href="https://www.nsca.com/globalassets/about/position-statements/position_stand_youth_resistance_training---2009.pdf" target="_blank" rel="noreferrer">NSCA 청소년 저항운동 입장문</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/35619779/" target="_blank" rel="noreferrer">타악 연주자 부상 예방 연구</a></p>
+  </main>
+
+  <footer>교육용 운동 안내이며 진단이나 개별 의료 처방을 대신하지 않습니다. 개인정보와 인바디 수치는 이 페이지에 저장하지 않습니다.</footer>
+
+  <script>
+    const exercises = {
+      row: {
+        name: '밴드 로우', role: '등 · 견갑 안정', image: 'assets/band-row.png', dose: '12~15회 × 3세트', shortDose: '12~15회',
+        purpose: '타격할 때 어깨가 들리거나 앞으로 말리지 않도록 등과 견갑골 주변의 지구력을 만듭니다.',
+        tempo: '2초 당기기 · 2초 유지 · 3초 복귀',
+        steps: [['① 시작', '발은 골반 너비. 팔을 뻗고 밴드가 처지지 않을 정도로만 긴장합니다.'], ['② 당기기', '숨을 내쉬며 팔꿈치를 몸통 가까이 뒤로 보냅니다.'], ['③ 유지·복귀', '손이 아랫갈비뼈 옆에 오면 2초 멈춘 뒤 3초에 걸쳐 돌아갑니다.']],
+        checks: ['어깨가 귀 쪽으로 올라가지 않기', '손목을 팔과 일직선으로 유지', '허리와 몸통을 뒤로 젖히지 않기'],
+        stop: ['어깨 앞쪽이 끼이거나 아픔', '팔이나 손의 저림', '밴드 고정부가 움직임'], coach: '몸은 그대로, 팔꿈치만 뒤로.'
+      },
+      pushup: {
+        name: '높은 지지면 푸시업', role: '밀기 · 삼두 · 전거근', image: 'assets/incline-pushup.png', dose: '8~12회 × 3세트', shortDose: '8~12회',
+        purpose: '가슴과 팔꿈치 펴는 힘, 견갑골을 몸통에 안정시키는 힘을 함께 기릅니다.',
+        tempo: '2초 내려가기 · 1초 멈춤 · 2초 밀기',
+        steps: [['① 시작', '튼튼한 책상에 손을 어깨너비로 두고 머리부터 발뒤꿈치까지 일직선을 만듭니다.'], ['② 내려가기', '팔꿈치를 몸통에서 30~45도 정도 벌려 가슴을 지지면 쪽으로 내립니다.'], ['③ 밀기', '허리 모양을 유지하며 지지면을 밀어 시작 자세로 돌아갑니다.']],
+        checks: ['책상이 움직이지 않는지 먼저 확인', '배와 엉덩이에 가볍게 힘주기', '어깨를 귀에서 멀리 유지'],
+        stop: ['손목이나 어깨의 날카로운 통증', '허리가 계속 아래로 처짐', '지지면이 흔들림'], coach: '몸은 한 줄, 책상을 멀리 밀어.'
+      },
+      external: {
+        name: '밴드 외회전', role: '회전근개 · 어깨 안정', image: 'assets/external-rotation.png', dose: '좌우 12~15회 × 3세트', shortDose: '좌우 12~15회',
+        purpose: '반복 타격 중 위팔뼈가 흔들리지 않도록 어깨의 작은 안정 근육을 강화합니다.',
+        tempo: '2초 바깥으로 · 1초 유지 · 3초 복귀',
+        steps: [['① 시작', '팔꿈치를 90도로 굽혀 옆구리에 가볍게 붙이고 손을 배 앞에 둡니다.'], ['② 벌리기', '몸통은 그대로 둔 채 전완만 천천히 바깥으로 회전합니다.'], ['③ 복귀', '편안한 범위에서 1초 멈춘 뒤 밴드에 끌리지 않게 돌아옵니다.']],
+        checks: ['팔꿈치가 옆구리에서 떨어지지 않기', '손목을 꺾지 않기', '몸통을 함께 돌리지 않기'],
+        stop: ['어깨 앞쪽의 끼임이나 통증', '목이 과도하게 긴장됨', '좌우 범위가 갑자기 크게 다름'], coach: '팔꿈치는 붙이고, 손만 바깥으로.'
+      },
+      plank: {
+        name: '팔꿈치 플랭크', role: '몸통 · 견갑 고정', image: 'assets/forearm-plank.png', dose: '15~25초 × 3세트', shortDose: '15~25초',
+        purpose: '팔을 빠르게 움직일 때 허리와 몸통이 흔들리지 않도록 전신을 연결합니다.',
+        tempo: '15~25초 유지 · 자연스럽게 호흡',
+        steps: [['① 준비', '팔꿈치를 어깨 바로 아래에 두고 무릎을 바닥에 댑니다.'], ['② 다리 펴기', '한쪽씩 다리를 뒤로 뻗어 무릎을 들고 발끝으로 지지합니다.'], ['③ 유지', '머리부터 발뒤꿈치까지 한 줄을 만들고 팔꿈치로 바닥을 계속 밉니다.']],
+        checks: ['숨을 참지 않기', '허리가 내려가거나 엉덩이가 솟지 않기', '어깨 사이가 푹 꺼지지 않기'],
+        stop: ['허리 통증', '어깨 앞쪽 통증', '자세가 무너진 뒤에도 버티게 됨'], coach: '허리 일직선, 바닥 밀고 숨 쉬기.'
+      },
+      forearm: {
+        name: '전완 회내·회외', role: '전완 회전 · 채 제어', image: 'assets/forearm-rotation.png', dose: '방향별 8~10회 × 3세트', shortDose: '방향별 8~10회',
+        purpose: '채를 움직이고 타격을 감속할 때 필요한 전완 회전과 손목 제어를 연습합니다.',
+        tempo: '2초 회전 · 1초 유지 · 2초 복귀',
+        steps: [['① 중립', '앉아서 팔꿈치를 허벅지에 지지하고 가벼운 물체를 세워 잡습니다.'], ['② 손바닥 위', '손목을 곧게 둔 채 전완을 천천히 돌려 손바닥이 위쪽을 향하게 합니다.'], ['③ 손바닥 아래', '중립을 지나 반대 방향도 편안한 범위에서 천천히 움직입니다.']],
+        checks: ['250~500mL 물병 정도의 가벼운 저항', '팔꿈치와 어깨는 움직이지 않기', '손목이 아니라 전완에서 회전'],
+        stop: ['손목·팔꿈치의 찌르는 통증', '손가락 저림', '물체를 놓칠 정도의 피로'], coach: '팔꿈치는 고정, 손목은 곧게.'
+      },
+      pallof: {
+        name: '팔로프 프레스', role: '몸통 회전 제어', image: 'assets/pallof-press.png', dose: '좌우 8~10회 × 3세트', shortDose: '좌우 8~10회',
+        purpose: '좌우 타격 중 밴드에 끌리듯 몸통이 돌아가지 않도록 중심을 잡는 힘을 기릅니다.',
+        tempo: '2초 밀기 · 2초 유지 · 2초 복귀',
+        steps: [['① 시작', '밴드를 몸 옆 가슴 높이에 고정하고 양손을 가슴 중앙에 모읍니다.'], ['② 밀기', '몸통을 정면으로 유지하며 두 손을 가슴 앞쪽으로 천천히 뻗습니다.'], ['③ 유지·복귀', '팔을 편 상태로 2초 유지한 뒤 가슴 쪽으로 천천히 돌아옵니다.']],
+        checks: ['발은 골반 너비, 무릎은 편안하게', '어깨와 골반이 계속 정면', '허리를 젖히지 않기'],
+        stop: ['허리 통증', '어깨에 힘이 몰림', '밴드 고정부가 불안정함'], coach: '밴드에 끌리지 말고 정면 유지.'
+      }
+    };
+
+    const sessions = {
+      day1: { focus: '기본 상체＋전완', ids: ['row', 'pushup', 'external', 'plank', 'forearm'] },
+      day2: { focus: '기본 상체＋회전 제어', ids: ['row', 'pushup', 'external', 'plank', 'pallof'] },
+      day3: { focus: '기본 상체＋전완 반복', ids: ['row', 'pushup', 'external', 'plank', 'forearm'] }
+    };
+
+    let activeSession = 'day1';
+    let activeExercise = 'row';
+    const list = document.getElementById('exercise-list');
+    const detail = document.getElementById('exercise-detail');
+
+    function renderSession() {
+      const session = sessions[activeSession];
+      document.getElementById('session-focus').textContent = session.focus;
+      if (!session.ids.includes(activeExercise)) activeExercise = session.ids[0];
+      list.innerHTML = session.ids.map((id, index) => {
+        const ex = exercises[id];
+        return `<button class="exercise-btn" data-exercise="${id}" aria-current="${id === activeExercise}">
+          <span class="num">${index + 1}</span><span><span class="exercise-name">${ex.name}</span><span class="exercise-role">${ex.role}</span></span><span class="dose">${ex.shortDose} · 3세트</span>
+        </button>`;
+      }).join('');
+      list.querySelectorAll('[data-exercise]').forEach(btn => btn.addEventListener('click', () => selectExercise(btn.dataset.exercise, true)));
+      renderDetail();
+    }
+
+    function renderDetail() {
+      const ex = exercises[activeExercise];
+      document.getElementById('detail-image').src = ex.image;
+      document.getElementById('detail-image').alt = `${ex.name} 시작·진행·완료 자세`;
+      document.getElementById('detail-role').textContent = ex.role;
+      document.getElementById('detail-name').textContent = ex.name;
+      document.getElementById('detail-purpose').textContent = ex.purpose;
+      document.getElementById('detail-dose').textContent = ex.dose;
+      document.getElementById('detail-tempo').textContent = ex.tempo;
+      document.getElementById('detail-steps').innerHTML = ex.steps.map(step => `<div class="step"><b>${step[0]}</b><p>${step[1]}</p></div>`).join('');
+      document.getElementById('detail-checks').innerHTML = ex.checks.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('detail-stop').innerHTML = ex.stop.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('detail-coach').textContent = ex.coach;
+      list.querySelectorAll('[data-exercise]').forEach(btn => btn.setAttribute('aria-current', String(btn.dataset.exercise === activeExercise)));
+      history.replaceState(null, '', `#${activeExercise}`);
+    }
+
+    function selectExercise(id, moveFocus = false) {
+      activeExercise = id;
+      renderDetail();
+      if (moveFocus && window.matchMedia('(max-width: 840px)').matches) {
+        detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        detail.focus({ preventScroll: true });
+      }
+    }
+
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => {
+      activeSession = tab.dataset.session;
+      document.querySelectorAll('.tab').forEach(item => item.setAttribute('aria-selected', String(item === tab)));
+      renderSession();
+    }));
+
+    const hashId = location.hash.slice(1);
+    if (exercises[hashId]) activeExercise = hashId;
+    renderSession();
+  </script>
+</body>
+</html>
