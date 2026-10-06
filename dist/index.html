@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="중학생 국악 타악 연주자를 위한 주 3회 상체 근력 운동 플랜">
   <meta name="theme-color" content="#12243a">
-  <title>장구 상체 근력 플랜</title>
+  <title>상체 근력 플랜</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2312243a'/%3E%3Cpath d='M15 22c10 5 24 5 34 0v20c-10-5-24-5-34 0z' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M15 22c-5 1-5 19 0 20M49 22c5 1 5 19 0 20' fill='none' stroke='%23f5a623' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M22 15l20 34' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
     :root {
@@ -57,9 +57,14 @@
     .exercise-role { display: block; margin-top: 1px; color: var(--ink-soft); font-size: .84rem; }
     .dose { color: var(--ink-soft); font-size: .84rem; white-space: nowrap; }
     .round-guide { margin-top: 14px; padding: 13px; border-radius: 13px; background: var(--blue-soft); color: var(--ink-soft); font-size: .9rem; }
+    .order-guide { margin-top: 9px; padding: 13px; border: 1px solid var(--line); border-radius: 13px; color: var(--ink-soft); font-size: .88rem; }
+    .order-guide strong { color: var(--ink); }
     .detail-panel { position: sticky; top: 16px; }
-    .detail-image-wrap { display: grid; place-items: center; min-height: 280px; padding: 12px; background: #fff; border-bottom: 1px solid var(--line); }
+    .detail-image-wrap { display: grid; place-items: center; min-height: 280px; padding: 12px 12px 0; background: #fff; }
     .detail-image { width: 100%; max-height: 430px; object-fit: contain; border-radius: 12px; }
+    .image-phase-labels { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); background: white; }
+    .image-phase-labels span { padding: 9px 12px 11px; color: var(--ink-soft); text-align: center; font-size: .85rem; font-weight: 800; }
+    .image-phase-labels span + span { border-left: 1px solid var(--line); }
     .detail-body { padding: 22px; }
     .detail-topline { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
     .detail-kicker { margin: 0 0 4px; color: var(--accent); font-size: .82rem; font-weight: 850; letter-spacing: .08em; }
@@ -69,7 +74,7 @@
     .tempo-card { margin: 18px 0; padding: 14px 16px; border-left: 5px solid var(--accent); border-radius: 0 12px 12px 0; background: var(--accent-soft); }
     .tempo-card span { display: block; color: #7a4727; font-size: .82rem; font-weight: 800; }
     .tempo-card strong { display: block; margin-top: 2px; font-size: 1.03rem; }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 18px; }
+    .steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 0 0 18px; }
     .step { padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: #fbfcfd; }
     .step b { display: block; margin-bottom: 4px; color: var(--accent); font-size: .9rem; }
     .step p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
@@ -124,7 +129,7 @@
   <header class="site-header">
     <div class="header-inner">
       <p class="eyebrow">3 days · upper body · percussion</p>
-      <h1>장구 상체 근력 플랜</h1>
+      <h1>상체 근력 플랜</h1>
       <p class="subtitle">첫 4~8주는 핵심 동작을 반복해 어깨·견갑·전완·몸통의 기초를 만듭니다. 계획표에서 운동을 누르면 자세와 보호자 체크 포인트가 열립니다.</p>
     </div>
     <div class="quick-strip" aria-label="운동 기본 원칙">
@@ -147,13 +152,15 @@
           <div class="session-meta"><span id="session-focus">기본 상체＋전완</span><span>약 35분</span></div>
           <div class="exercise-list" id="exercise-list" aria-live="polite"></div>
           <div class="round-guide"><strong>진행:</strong> 1~5번을 각각 1세트씩 수행한 뒤 90초 쉽니다. 이 순서를 총 3라운드 반복합니다.</div>
+          <div class="order-guide"><strong>이 순서인 이유:</strong> 힘과 집중력이 좋을 때 큰 근육을 쓰는 당기기·밀기를 먼저 하고, 어깨 안정과 전완·몸통 보조 운동을 이어갑니다. 플랭크는 몸통 피로가 앞 운동의 자세를 흐리지 않도록 마지막에 합니다.</div>
         </div>
 
         <article class="panel detail-panel" id="exercise-detail" tabindex="-1" aria-live="polite">
-          <div class="detail-image-wrap"><img class="detail-image" id="detail-image" src="assets/band-row.png" alt="밴드 로우 단계별 자세"></div>
+          <div class="detail-image-wrap"><img class="detail-image" id="detail-image" src="assets/cable-row.png" alt="케이블 로우 시작 자세와 동작 최고점"></div>
+          <div class="image-phase-labels" aria-hidden="true"><span>시작 자세</span><span>동작 최고점</span></div>
           <div class="detail-body">
             <div class="detail-topline">
-              <div><p class="detail-kicker" id="detail-role">등 · 견갑 안정</p><h2 id="detail-name">밴드 로우</h2><p class="detail-purpose" id="detail-purpose"></p></div>
+              <div><p class="detail-kicker" id="detail-role">등 · 견갑 안정</p><h2 id="detail-name">케이블 로우</h2><p class="detail-purpose" id="detail-purpose"></p></div>
               <div class="set-chip" id="detail-dose"></div>
             </div>
             <div class="tempo-card"><span>운동 속도</span><strong id="detail-tempo"></strong></div>
@@ -173,9 +180,9 @@
       <table class="progress-table">
         <thead><tr><th>주차</th><th>세트</th><th>목표</th><th>올리지 않는 것</th></tr></thead>
         <tbody>
-          <tr><td>1주차</td><td>모든 운동 3세트</td><td>반복 범위의 아래쪽, 자세 익히기</td><td>밴드 강도·무게</td></tr>
+          <tr><td>1주차</td><td>모든 운동 3세트</td><td>반복 범위의 아래쪽, 자세 익히기</td><td>케이블 무게</td></tr>
           <tr><td>2주차</td><td>모든 운동 3세트</td><td>같은 저항으로 반복 범위의 위쪽 도전</td><td>세트와 저항 동시 증가</td></tr>
-          <tr><td>3주차</td><td>밴드 로우만 4세트</td><td>두 번 연속 정확히 끝냈을 때만 추가</td><td>푸시업 높이 낮추기</td></tr>
+          <tr><td>3주차</td><td>케이블 로우만 4세트</td><td>두 번 연속 정확히 끝냈을 때만 추가</td><td>푸시업 높이 낮추기</td></tr>
           <tr><td>4주차</td><td>로우·푸시업 4세트, 나머지 3세트</td><td>다음 날 연주에 피로가 남지 않게</td><td>한 운동 4세트 초과</td></tr>
         </tbody>
       </table>
@@ -194,26 +201,26 @@
   <script>
     const exercises = {
       row: {
-        name: '밴드 로우', role: '등 · 견갑 안정', image: 'assets/band-row.png', dose: '12~15회 × 3세트', shortDose: '12~15회',
+        name: '케이블 로우', role: '등 · 견갑 안정', image: 'assets/cable-row.png', dose: '12~15회 × 3세트', shortDose: '12~15회',
         purpose: '타격할 때 어깨가 들리거나 앞으로 말리지 않도록 등과 견갑골 주변의 지구력을 만듭니다.',
         tempo: '2초 당기기 · 2초 유지 · 3초 복귀',
-        steps: [['① 시작', '발은 골반 너비. 팔을 뻗고 밴드가 처지지 않을 정도로만 긴장합니다.'], ['② 당기기', '숨을 내쉬며 팔꿈치를 몸통 가까이 뒤로 보냅니다.'], ['③ 유지·복귀', '손이 아랫갈비뼈 옆에 오면 2초 멈춘 뒤 3초에 걸쳐 돌아갑니다.']],
+        steps: [['① 시작 자세', '도르래를 가슴 높이에 맞춥니다. 발은 골반 너비로 두고, 몸통을 세운 채 팔을 뻗어 손잡이를 잡습니다.'], ['② 동작 최고점', '팔꿈치를 몸통 가까이 뒤로 보내 손이 아랫갈비뼈 옆에 오면 2초 멈춥니다. 이후 케이블에 끌려가지 않게 3초 동안 돌아갑니다.']],
         checks: ['어깨가 귀 쪽으로 올라가지 않기', '손목을 팔과 일직선으로 유지', '허리와 몸통을 뒤로 젖히지 않기'],
-        stop: ['어깨 앞쪽이 끼이거나 아픔', '팔이나 손의 저림', '밴드 고정부가 움직임'], coach: '몸은 그대로, 팔꿈치만 뒤로.'
+        stop: ['어깨 앞쪽이 끼이거나 아픔', '팔이나 손의 저림', '몸을 젖혀야 당겨지는 무게'], coach: '몸은 그대로, 팔꿈치만 뒤로.'
       },
       pushup: {
         name: '높은 지지면 푸시업', role: '밀기 · 삼두 · 전거근', image: 'assets/incline-pushup.png', dose: '8~12회 × 3세트', shortDose: '8~12회',
         purpose: '가슴과 팔꿈치 펴는 힘, 견갑골을 몸통에 안정시키는 힘을 함께 기릅니다.',
         tempo: '2초 내려가기 · 1초 멈춤 · 2초 밀기',
-        steps: [['① 시작', '튼튼한 책상에 손을 어깨너비로 두고 머리부터 발뒤꿈치까지 일직선을 만듭니다.'], ['② 내려가기', '팔꿈치를 몸통에서 30~45도 정도 벌려 가슴을 지지면 쪽으로 내립니다.'], ['③ 밀기', '허리 모양을 유지하며 지지면을 밀어 시작 자세로 돌아갑니다.']],
-        checks: ['책상이 움직이지 않는지 먼저 확인', '배와 엉덩이에 가볍게 힘주기', '어깨를 귀에서 멀리 유지'],
-        stop: ['손목이나 어깨의 날카로운 통증', '허리가 계속 아래로 처짐', '지지면이 흔들림'], coach: '몸은 한 줄, 책상을 멀리 밀어.'
+        steps: [['① 시작 자세', '움직이지 않는 벤치에 손을 어깨너비보다 조금 넓게 두고, 머리부터 발뒤꿈치까지 일직선을 만듭니다.'], ['② 동작 최고점', '팔꿈치를 몸통에서 30~45도 정도 벌려 가슴을 벤치 쪽으로 내립니다. 1초 멈춘 뒤 몸의 일직선을 유지하며 밀어냅니다.']],
+        checks: ['벤치가 움직이지 않는지 먼저 확인', '배와 엉덩이에 가볍게 힘주기', '어깨를 귀에서 멀리 유지'],
+        stop: ['손목이나 어깨의 날카로운 통증', '허리가 계속 아래로 처짐', '지지면이 흔들림'], coach: '몸은 한 줄, 벤치를 멀리 밀어.'
       },
       external: {
-        name: '밴드 외회전', role: '회전근개 · 어깨 안정', image: 'assets/external-rotation.png', dose: '좌우 12~15회 × 3세트', shortDose: '좌우 12~15회',
+        name: '케이블 어깨 바깥 돌리기', role: '어깨 안정 근육', image: 'assets/cable-shoulder-rotation.png', dose: '양팔 각 12~15회 × 3세트', shortDose: '양팔 각 12~15회',
         purpose: '반복 타격 중 위팔뼈가 흔들리지 않도록 어깨의 작은 안정 근육을 강화합니다.',
         tempo: '2초 바깥으로 · 1초 유지 · 3초 복귀',
-        steps: [['① 시작', '팔꿈치를 90도로 굽혀 옆구리에 가볍게 붙이고 손을 배 앞에 둡니다.'], ['② 벌리기', '몸통은 그대로 둔 채 전완만 천천히 바깥으로 회전합니다.'], ['③ 복귀', '편안한 범위에서 1초 멈춘 뒤 밴드에 끌리지 않게 돌아옵니다.']],
+        steps: [['① 시작 자세', '도르래를 팔꿈치 높이에 맞춥니다. 팔꿈치를 90도로 굽혀 옆구리에 붙이고 손잡이를 배 앞에서 잡습니다.'], ['② 동작 최고점', '몸통과 팔꿈치는 그대로 둔 채 손을 바깥으로 천천히 벌립니다. 편안한 끝 지점에서 1초 멈춘 뒤 3초 동안 돌아갑니다.']],
         checks: ['팔꿈치가 옆구리에서 떨어지지 않기', '손목을 꺾지 않기', '몸통을 함께 돌리지 않기'],
         stop: ['어깨 앞쪽의 끼임이나 통증', '목이 과도하게 긴장됨', '좌우 범위가 갑자기 크게 다름'], coach: '팔꿈치는 붙이고, 손만 바깥으로.'
       },
@@ -221,32 +228,32 @@
         name: '팔꿈치 플랭크', role: '몸통 · 견갑 고정', image: 'assets/forearm-plank.png', dose: '15~25초 × 3세트', shortDose: '15~25초',
         purpose: '팔을 빠르게 움직일 때 허리와 몸통이 흔들리지 않도록 전신을 연결합니다.',
         tempo: '15~25초 유지 · 자연스럽게 호흡',
-        steps: [['① 준비', '팔꿈치를 어깨 바로 아래에 두고 무릎을 바닥에 댑니다.'], ['② 다리 펴기', '한쪽씩 다리를 뒤로 뻗어 무릎을 들고 발끝으로 지지합니다.'], ['③ 유지', '머리부터 발뒤꿈치까지 한 줄을 만들고 팔꿈치로 바닥을 계속 밉니다.']],
+        steps: [['① 시작 자세', '팔꿈치를 어깨 바로 아래에 두고 양 무릎을 바닥에 댑니다. 배에 가볍게 힘을 주고 목을 편안하게 둡니다.'], ['② 동작 최고점', '무릎을 들어 발끝으로 지지하고 머리부터 발뒤꿈치까지 한 줄을 만듭니다. 팔꿈치로 바닥을 밀면서 자연스럽게 호흡합니다.']],
         checks: ['숨을 참지 않기', '허리가 내려가거나 엉덩이가 솟지 않기', '어깨 사이가 푹 꺼지지 않기'],
         stop: ['허리 통증', '어깨 앞쪽 통증', '자세가 무너진 뒤에도 버티게 됨'], coach: '허리 일직선, 바닥 밀고 숨 쉬기.'
       },
       forearm: {
-        name: '전완 회내·회외', role: '전완 회전 · 채 제어', image: 'assets/forearm-rotation.png', dose: '방향별 8~10회 × 3세트', shortDose: '방향별 8~10회',
+        name: '전완근 회전 운동', role: '아래팔 회전 · 채 제어', image: 'assets/forearm-rotation.png', dose: '양팔 각 8~10회 × 3세트', shortDose: '양팔 각 8~10회',
         purpose: '채를 움직이고 타격을 감속할 때 필요한 전완 회전과 손목 제어를 연습합니다.',
-        tempo: '2초 회전 · 1초 유지 · 2초 복귀',
-        steps: [['① 중립', '앉아서 팔꿈치를 허벅지에 지지하고 가벼운 물체를 세워 잡습니다.'], ['② 손바닥 위', '손목을 곧게 둔 채 전완을 천천히 돌려 손바닥이 위쪽을 향하게 합니다.'], ['③ 손바닥 아래', '중립을 지나 반대 방향도 편안한 범위에서 천천히 움직입니다.']],
+        tempo: '2초 돌리기 · 1초 유지 · 2초 가운데로',
+        steps: [['① 시작 자세', '앉아서 팔꿈치를 허벅지에 고정하고 아주 가벼운 아령을 세워 잡습니다. 엄지는 위를 향하고 손목은 곧게 둡니다.'], ['② 동작 최고점', '팔꿈치와 손목은 그대로 둔 채 손바닥이 위를 향하도록 아래팔만 돌립니다. 가운데로 돌아온 뒤 손바닥이 아래로 향하는 방향도 반복합니다.']],
         checks: ['250~500mL 물병 정도의 가벼운 저항', '팔꿈치와 어깨는 움직이지 않기', '손목이 아니라 전완에서 회전'],
         stop: ['손목·팔꿈치의 찌르는 통증', '손가락 저림', '물체를 놓칠 정도의 피로'], coach: '팔꿈치는 고정, 손목은 곧게.'
       },
       pallof: {
-        name: '팔로프 프레스', role: '몸통 회전 제어', image: 'assets/pallof-press.png', dose: '좌우 8~10회 × 3세트', shortDose: '좌우 8~10회',
-        purpose: '좌우 타격 중 밴드에 끌리듯 몸통이 돌아가지 않도록 중심을 잡는 힘을 기릅니다.',
+        name: '케이블 몸통 버티기', role: '몸통 회전 제어', image: 'assets/cable-core-brace.png', dose: '양쪽 각 8~10회 × 3세트', shortDose: '양쪽 각 8~10회',
+        purpose: '좌우 타격 중 케이블에 끌리듯 몸통이 돌아가지 않도록 중심을 잡는 힘을 기릅니다.',
         tempo: '2초 밀기 · 2초 유지 · 2초 복귀',
-        steps: [['① 시작', '밴드를 몸 옆 가슴 높이에 고정하고 양손을 가슴 중앙에 모읍니다.'], ['② 밀기', '몸통을 정면으로 유지하며 두 손을 가슴 앞쪽으로 천천히 뻗습니다.'], ['③ 유지·복귀', '팔을 편 상태로 2초 유지한 뒤 가슴 쪽으로 천천히 돌아옵니다.']],
+        steps: [['① 시작 자세', '도르래를 가슴 높이에 맞추고 머신을 옆에 둡니다. 양손으로 손잡이를 잡아 가슴 중앙에 모읍니다.'], ['② 동작 최고점', '어깨와 골반을 정면으로 유지한 채 양손을 앞으로 뻗어 2초 버팁니다. 몸통이 돌아가지 않게 유지하며 천천히 돌아갑니다.']],
         checks: ['발은 골반 너비, 무릎은 편안하게', '어깨와 골반이 계속 정면', '허리를 젖히지 않기'],
-        stop: ['허리 통증', '어깨에 힘이 몰림', '밴드 고정부가 불안정함'], coach: '밴드에 끌리지 말고 정면 유지.'
+        stop: ['허리 통증', '어깨에 힘이 몰림', '몸을 정면으로 둘 수 없는 무게'], coach: '케이블에 끌리지 말고 정면 유지.'
       }
     };
 
     const sessions = {
-      day1: { focus: '기본 상체＋전완', ids: ['row', 'pushup', 'external', 'plank', 'forearm'] },
-      day2: { focus: '기본 상체＋회전 제어', ids: ['row', 'pushup', 'external', 'plank', 'pallof'] },
-      day3: { focus: '기본 상체＋전완 반복', ids: ['row', 'pushup', 'external', 'plank', 'forearm'] }
+      day1: { focus: '기본 상체＋전완', ids: ['row', 'pushup', 'external', 'forearm', 'plank'] },
+      day2: { focus: '기본 상체＋회전 제어', ids: ['row', 'pushup', 'external', 'pallof', 'plank'] },
+      day3: { focus: '기본 상체＋전완 반복', ids: ['row', 'pushup', 'external', 'forearm', 'plank'] }
     };
 
     let activeSession = 'day1';
@@ -271,7 +278,7 @@
     function renderDetail() {
       const ex = exercises[activeExercise];
       document.getElementById('detail-image').src = ex.image;
-      document.getElementById('detail-image').alt = `${ex.name} 시작·진행·완료 자세`;
+      document.getElementById('detail-image').alt = `${ex.name} 시작 자세와 동작 최고점`;
       document.getElementById('detail-role').textContent = ex.role;
       document.getElementById('detail-name').textContent = ex.name;
       document.getElementById('detail-purpose').textContent = ex.purpose;
